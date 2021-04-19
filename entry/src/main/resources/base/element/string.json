@@ -1,0 +1,44 @@
+{
+  "string": [
+    {
+      "name": "app_name",
+      "value": "WearableDesign"
+    },
+    {
+      "name": "mainability_description",
+      "value": "Java_Wearable_Empty Feature Ability"
+    },
+    {
+      "name": "HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "environment",
+      "value": "Environment"
+    },
+    {
+      "name": "agriculture",
+      "value": "AGRICULTURE"
+    },
+    {
+      "name": "temperature",
+      "value": "Temperature"
+    },
+    {
+      "name": "humidity",
+      "value": "Humidity"
+    },
+    {
+      "name": "luminance",
+      "value": "Luminance"
+    },
+    {
+      "name": "light",
+      "value": "Light"
+    },
+    {
+      "name": "motor",
+      "value": "Motor"
+    }
+  ]
+}

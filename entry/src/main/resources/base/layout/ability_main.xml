@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:background_element="#FF000000"
+    >
+    <DirectionalLayout
+        ohos:height="match_parent"
+        ohos:width="match_parent"
+        ohos:background_element="#FF000000"
+        ohos:orientation="vertical">
+
+        <Image
+            ohos:id="$+id:img_app_icon"
+            ohos:height="match_content"
+            ohos:width="match_content"
+            ohos:top_margin="10vp"
+            ohos:layout_alignment="horizontal_center"
+            ohos:image_src="$media:icon"
+            />
+
+        <Text
+            ohos:id="$+id:text_app"
+            ohos:height="25vp"
+            ohos:width="match_parent"
+            ohos:layout_alignment="horizontal_center"
+            ohos:text_alignment="center"
+            ohos:text="$string:agriculture"
+            ohos:text_color="#DCDCDC"
+            ohos:text_font="sans-serif-condensed-medium"
+            />
+
+        <DirectionalLayout
+            ohos:height="30vp"
+            ohos:width="match_parent"
+            ohos:top_margin="5vp"
+            ohos:orientation="horizontal">
+
+            <Text
+                ohos:height="20vp"
+                ohos:width="match_content"
+                ohos:layout_alignment="horizontal_center"
+                ohos:left_margin="15vp"
+                ohos:text_alignment="center"
+                ohos:text_color="#B22222"
+                ohos:text="$string:temperature"
+                ohos:text_size="12vp"
+                />
+
+            <Text
+                ohos:height="30vp"
+                ohos:width="match_content"
+                ohos:layout_alignment="horizontal_center"
+                ohos:left_margin="10vp"
+                ohos:text_alignment="center"
+                ohos:text_color="#1E90FF"
+                ohos:text="$string:humidity"
+                ohos:text_size="12vp"
+                ohos:text_font="sans-serif-medium"
+                />
+
+            <Text
+                ohos:height="20vp"
+                ohos:width="match_content"
+                ohos:layout_alignment="horizontal_center"
+                ohos:left_margin="10vp"
+                ohos:text_alignment="center"
+                ohos:text_color="#FFD700"
+                ohos:text="$string:luminance"
+                ohos:text_size="12vp"
+                ohos:text_font="sans-serif-medium"
+                />
+
+        </DirectionalLayout>
+
+        <DirectionalLayout
+            ohos:height="30vp"
+            ohos:width="match_parent"
+            ohos:top_margin="5vp"
+            ohos:orientation="horizontal">
+
+            <Text
+                ohos:id="$+id:temperature"
+                ohos:height="match_content"
+                ohos:width="match_content"
+                ohos:layout_alignment="horizontal_center"
+                ohos:left_margin="40vp"
+                ohos:text_alignment="center"
+                ohos:text="20"
+                ohos:text_size="15vp"
+                ohos:text_color="#FF7F50"
+                />
+
+            <Text
+                ohos:id="$+id:humidity"
+                ohos:height="match_content"
+                ohos:width="match_content"
+                ohos:layout_alignment="horizontal_center"
+                ohos:left_margin="50vp"
+                ohos:text_alignment="center"
+                ohos:text="20"
+                ohos:text_size="15vp"
+                ohos:text_color="#00FFFF"
+                />
+
+            <Text
+                ohos:id="$+id:luminance"
+                ohos:height="match_content"
+                ohos:width="match_content"
+                ohos:layout_alignment="horizontal_center"
+                ohos:left_margin="50vp"
+                ohos:text_alignment="center"
+                ohos:text="20"
+                ohos:text_size="15vp"
+                ohos:text_color="#FFFFE0"
+                />
+        </DirectionalLayout>
+
+        <DirectionalLayout
+            ohos:height="match_content"
+            ohos:width="match_content"
+            ohos:orientation="horizontal">
+
+            <Text
+                ohos:height="match_content"
+                ohos:width="match_content"
+                ohos:layout_alignment="horizontal_center"
+                ohos:left_margin="75vp"
+                ohos:text_alignment="center"
+                ohos:text="$string:light"
+                ohos:text_size="12vp"
+                ohos:text_color="#DCDCDC"
+                ohos:text_font="sans-serif-condensed-medium"
+                />
+
+            <Switch
+                ohos:id="$+id:lightSwitch"
+                ohos:height="match_content"
+                ohos:width="match_content"
+                ohos:text_state_off="OFF"
+                ohos:text_state_on="ON"
+                ohos:left_margin="30vp"
+                />
+        </DirectionalLayout>
+
+        <DirectionalLayout
+            ohos:height="match_content"
+            ohos:width="match_content"
+            ohos:top_margin="8vp"
+            ohos:orientation="horizontal">
+
+            <Text
+                ohos:height="match_content"
+                ohos:width="match_content"
+                ohos:layout_alignment="horizontal_center"
+                ohos:left_margin="75vp"
+                ohos:text_alignment="center"
+                ohos:text="$string:motor"
+                ohos:text_size="12vp"
+                ohos:text_color="#DCDCDC"
+                ohos:text_font="sans-serif-condensed-medium"
+                />
+
+            <Switch
+                ohos:id="$+id:motorSwitch"
+                ohos:height="match_content"
+                ohos:width="match_content"
+                ohos:text_state_off="OFF"
+                ohos:text_state_on="ON"
+                ohos:left_margin="26vp"
+                />
+        </DirectionalLayout>
+    </DirectionalLayout>
+</ScrollView>
