@@ -1,6 +1,9 @@
 package com.wgl.configuration;
 
+import com.wgl.wearabledesign.NotificationMessage;
 import net.sf.json.JSONObject;
+import ohos.app.Context;
+import ohos.media.image.PixelMap;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -14,13 +17,17 @@ public class HttpConfig implements Runnable{
     private final String X_AUTH_TOKEN;
     private final URL url;
     private HashMap<String, Integer> data;
+    private PixelMap pixelMap;
+    private Context context;
+    private NotificationMessage message;
 
 
-    public HttpConfig(URL url, String X_AUTH_TOKEN){
+    public HttpConfig(URL url, String X_AUTH_TOKEN, PixelMap pixelMap, Context context){
 
         this.X_AUTH_TOKEN = X_AUTH_TOKEN;
-
+        this.pixelMap = pixelMap;
         this.url = url;
+        this.context = context;
         data = new HashMap<>();
     }
 
@@ -38,6 +45,8 @@ public class HttpConfig implements Runnable{
             String response = getStringFromInputStream(connection.getInputStream());
             JSONObject jsonObject = JSONObject.fromObject(response);
             data = MessageAnalyzer.getData(jsonObject);
+            message = new NotificationMessage(data, pixelMap, context);
+            message.checkNotification();
         }else{
             doConnect();
         }

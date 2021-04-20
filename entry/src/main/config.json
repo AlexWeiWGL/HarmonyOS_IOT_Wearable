@@ -47,7 +47,7 @@
         "name": "com.wgl.wearabledesign.MainAbility",
         "icon": "$media:icon",
         "description": "$string:mainability_description",
-        "label": "$string:app_name",
+        "label": "Agriculture",
         "type": "page",
         "launchType": "standard"
       }
