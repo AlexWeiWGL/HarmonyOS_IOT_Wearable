@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class NotificationMessage {
+public class NotificationMessage{
     private HashMap<String, Integer> data;
     private NotificationSlot notificationSlot;
     private NotificationRequest request;
@@ -25,20 +25,23 @@ public class NotificationMessage {
     private String contentText;
     private PixelMap pixelMap;
     private Context context;
+    private boolean isFirst;
 
-    public NotificationMessage(HashMap<String, Integer> data, PixelMap pixelMap, Context context) {
+    public NotificationMessage(HashMap<String, Integer> data, PixelMap pixelMap, Context context, boolean isFirst) {
         this.data = data;
         this.title = "Agriculture";
         this.pixelMap = pixelMap;
         this.context = context;
+        this.isFirst = isFirst;
     }
 
     public void checkNotification(){
-        if(data.get("Luminance") < 100){
+        if(data.get("Luminance") < 100 && !isFirst){
             contentText = "Light condition is Weak !";
             initNotificationSlot();
             publishNotification();
             initAgent();
+            isFirst = true;
         }
     }
 
@@ -96,5 +99,17 @@ public class NotificationMessage {
         } catch (RemoteException exception) {
             exception.printStackTrace();
         }
+    }
+
+    public void setIsFirst(boolean isFirst){
+        this.isFirst = isFirst;
+    }
+
+    public boolean getIsFirst(){
+        return isFirst;
+    }
+
+    public void setData(HashMap<String, Integer> data){
+        this.data = data;
     }
 }

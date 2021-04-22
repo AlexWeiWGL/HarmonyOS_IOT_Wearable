@@ -17,18 +17,15 @@ public class HttpConfig implements Runnable{
     private final String X_AUTH_TOKEN;
     private final URL url;
     private HashMap<String, Integer> data;
-    private PixelMap pixelMap;
-    private Context context;
     private NotificationMessage message;
 
 
-    public HttpConfig(URL url, String X_AUTH_TOKEN, PixelMap pixelMap, Context context){
+    public HttpConfig(URL url, String X_AUTH_TOKEN, PixelMap pixelMap, Context context, boolean isFirst){
 
         this.X_AUTH_TOKEN = X_AUTH_TOKEN;
-        this.pixelMap = pixelMap;
         this.url = url;
-        this.context = context;
         data = new HashMap<>();
+        message = new NotificationMessage(data, pixelMap, context, isFirst);
     }
 
     private void doConnect() throws IOException {
@@ -45,7 +42,7 @@ public class HttpConfig implements Runnable{
             String response = getStringFromInputStream(connection.getInputStream());
             JSONObject jsonObject = JSONObject.fromObject(response);
             data = MessageAnalyzer.getData(jsonObject);
-            message = new NotificationMessage(data, pixelMap, context);
+            message.setData(data);
             message.checkNotification();
         }else{
             doConnect();
@@ -76,5 +73,13 @@ public class HttpConfig implements Runnable{
         String output = baos.toString();
         baos.close();
         return output;
+    }
+
+    public void setNotificationIsFirst(boolean isFirst){
+        message.setIsFirst(isFirst);
+    }
+
+    public boolean getNotificationIsFirst(){
+        return message.getIsFirst();
     }
 }
